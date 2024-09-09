@@ -1,0 +1,273 @@
+\documentclass[UTF8,a4paper]{ctexart}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{tabu}
+\usepackage{xeCJK}
+\usepackage{CJK}     
+\usepackage{xeCJKfntef}                     
+\usepackage{fancyhdr}               
+\usepackage{graphicx}                 
+\usepackage{lastpage}    
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{fontspec}
+\usepackage{layout}
+\usepackage{titletoc}
+\usepackage[colorlinks,linkcolor=blue]{hyperref} 
+\newcommand\filename[1]{\emph{\textbf{#1}}}
+\newcommand\udot[1]{\textbf{\color{black}\CJKunderdot{\color{black}#1}}} % 第一个 color 调整加粗字体下着重号的颜色
+\newcommand\newprob[2]{
+    \newpage
+    \pagestyle{fancy}
+    \lhead{中文标题} \rhead{#1（#2）}
+    \cfoot{第 \thepage 页 \qquad 共 \pageref{LastPage} 页}
+    \phantomsection
+    \addcontentsline{toc}{section}{#1（#2）}
+    \begin{center}
+        \LARGE
+        \textbf{#1（}#2\textbf{）}
+    \end{center}
+    \large
+    %
+    \textbf{【题目描述】}
+    \phantomsection
+    \addcontentsline{toc}{subsection}{【题目描述】}
+}
+\newcommand\para[1]{
+    $ $ \\ 
+    \textbf{【#1】}
+    \phantomsection
+    \addcontentsline{toc}{subsection}{【#1】}
+}
+\newcommand\sample[2]{
+    $ $ \\ 
+    \textbf{【样例} #1\textbf{#2】}
+    \phantomsection
+    \addcontentsline{toc}{subsection}{【样例 #1 #2】}
+}
+\lstset{
+    basicstyle={      
+        \color{black}
+        \fontspec{Courier New}
+    },
+    keywordstyle={
+        \color{blue}
+        \fontspec{Courier New}
+    },
+    numberstyle={
+        \color{gray}
+        \texttt
+    },
+    rulecolor=\color{blue},
+    numbers=left,                               
+    frame=single,                            
+    % frameround=tttt,
+    morekeywords={Sample, Input, Output},   % 可以手动添加关键字
+}
+\setmonofont{Courier New}
+\geometry{left=2.52cm,right=2.52cm,top=2.5cm,bottom=2.5cm}
+\begin{document}
+    \pagestyle{fancy}
+    \lhead{中文标题} \rhead{}
+    \cfoot{第 \thepage 页 \qquad 共 \pageref{LastPage} \color{black} 页}
+    \thispagestyle{empty}
+    \addcontentsline{toc}{section}{注意事项}
+    \begin{center}
+        \Huge
+        \textbf{中文标题}
+        \\
+        \Huge 
+        EnglishContestName
+        \\
+        \huge
+        \textit{SecondTitle}
+        \\
+        \Large
+        \textbf{时间：}2021\textbf{年}1\textbf{月}1\textbf{日} 08:30 $\sim$ 1:00
+        \\
+    \end{center}
+    \large
+    \begin{center}
+        \begin{tabular}{|p{3.1cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
+        \hline
+        题目名称 & First & Second & Third & Forth \\
+        \hline
+        题目类型 & 传统型 & 传统型 & 传统型 & 传统型 \\
+        \hline
+        目录 & \texttt{first} & \texttt{second} & \texttt{third} & \texttt{fourth} \\
+        \hline
+        可执行文件名 & \texttt{first} & \texttt{second} & \texttt{third} & \texttt{fourth} \\
+        \hline
+        输入文件名 & \texttt{first.in} & \texttt{second.in} & \texttt{third.in} & \texttt{fourth.in} \\
+        \hline
+        输出文件名 & \texttt{first.out} & \texttt{second.out} & \texttt{third.out} & \texttt{fourth.out} \\
+        \hline
+        每个测试点时限 & 1.0 秒 & 1.0 秒 & 1.0 秒 & 1.0 秒 \\
+        \hline
+        内存限制 & 256 MiB & 256 MiB & 256 MiB & 256 MiB \\
+        \hline
+        测试点数目 & 5 & 5 & 5 & 5 \\
+        \hline
+        测试点是否等分 & 是 & 是 & 是 & 是 \\
+        \hline
+        \end{tabular}
+    \end{center}
+提交源程序文件名
+    \begin{center}
+        \begin{tabular}{|p{3.1cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
+        \hline
+        对于 C++ \  语言 & \texttt{first.cpp} & \texttt{second.cpp} & \texttt{third.cpp} & \texttt{fourth.cpp} \\
+        \hline
+        \end{tabular}
+    \end{center}
+编译选项
+    \begin{center}
+        \begin{tabular}{|p{3.1cm}|p{11.2cm}<\centering|}
+        \hline
+        对于 C++ \ 语言 & \texttt{-O2 -std=c++14 -static} \\
+        \hline
+        \end{tabular}
+    \end{center}
+    \udot{注意事项（请仔细阅读）} 
+    \\
+    \indent
+    1. 文件名（程序名和输入输出文件名）必须使用英文小写。\par
+    2. C/C++ 中函数 main() 的返回值类型必须是 int，程序正常结束时的返回值必须是 0。\par
+    3. 提交的程序代码文件的放置位置请参照具体要求。\par
+    4. 因违反以上三点而出现的错误或问题，申诉时一律不予受理。\par
+    5. 若无特殊说明，结果的比较方式为全文比较（过滤行末空格及文末回车）。\par
+    6. 选手提交的程序源文件必须不大于 100KB。\par
+    7. 程序可使用的栈内存空间限制与题目的内存限制一致。\par
+    8. 只提供 Linux 格式附加样例文件。\par
+    9. 评测在 NOI Linux 下进行，各语言的编译器版本以其为准。
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newprob{First}{first} \\ \indent
+Description. \par
+求出\udot{至少}有多少个数满足条件。
+
+\para{输入格式} \\ \indent
+从文件 \filename{first.in} 中读入数据。 \par
+包含一个正整数 $n$。
+
+\para{输出格式} \\ \indent
+输出到文件 \filename{first.out} 中。 \par
+Output. 
+
+\sample{1}{输入}
+\begin{lstlisting}
+ Sample Input.
+\end{lstlisting}
+
+\sample{1}{输出}
+\begin{lstlisting}
+ Sample Output.
+\end{lstlisting}
+
+\sample{1}{解释} \\ \indent
+Note.
+
+\sample{2}{} \\ \indent
+见选手目录下的 \filename{first/first2.in} 与 \filename{first/first2.ans}。
+
+\para{数据范围} \\ \indent
+\begin{center}
+    \begin{tabu}{c|c|c|c}
+        \tabucline[2pt]{-}
+        测试点编号 & $n \le$ & $m \le$ & 特殊限制 \\ \tabucline[1.2pt]{-}
+        $1 \sim 4$ & $15$ & $2000$ & \multirow{2}{*}{无} \\ \cline{1-3}
+        $5 \sim 8$ & $2000$ & $15$ &  \\ \hline
+        $9 \sim 12$ & \multicolumn{2}{c|}{$100$} & $c_i = C_j = 1$ \\ \hline
+        $13 \sim 16$ & \multicolumn{2}{c|}{\multirow{3}{*}{$2000$}} & $w_i = W_j = 1$ \\ \cline{1-1} \cline{4-4}
+        $17 \sim 20$ & \multicolumn{2}{c|}{} & $v_i = V_j = 1$ \\ \cline{1-1} \cline{4-4}
+        $21 \sim 25$ & \multicolumn{2}{c|}{} & 无 \\ \tabucline[2pt]{-}
+    \end{tabu}
+\end{center}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newprob{Second}{second} \\ \indent
+Description. 
+
+\para{输入格式} \\ \indent
+从文件 \filename{second.in} 中读入数据。 \par
+
+\para{输出格式} \\ \indent
+输出到文件 \filename{second.out} 中。 \par
+Output. 
+
+\sample{1}{输入}
+\begin{lstlisting}
+ Sample Input.
+\end{lstlisting}
+
+\sample{1}{输出}
+\begin{lstlisting}
+ Sample Output.
+\end{lstlisting}
+
+\sample{1}{解释} \\ \indent
+Note.
+
+\sample{2}{} \\ \indent
+见选手目录下的 \filename{second/second2.in} 与 \filename{second/second2.ans}。
+
+\para{数据范围} \\ \indent
+Constraint.
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newprob{Third}{third} \\ \indent
+Description. 
+
+\para{输入格式} \\ \indent
+从文件 \filename{third.in} 中读入数据。 \par
+
+\para{输出格式} \\ \indent
+输出到文件 \filename{third.out} 中。 \par
+Output. 
+
+\sample{1}{输入}
+\begin{lstlisting}
+ Sample Input.
+\end{lstlisting}
+
+\sample{1}{输出}
+\begin{lstlisting}
+ Sample Output.
+\end{lstlisting}
+
+\sample{1}{解释} \\ \indent
+Note.
+
+\sample{2}{} \\ \indent
+见选手目录下的 \filename{third/third2.in} 与 \filename{third/third2.ans}。
+
+\para{数据范围} \\ \indent
+Constraint.
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newprob{Fourth}{fourth} \\ \indent
+Description. 
+
+\para{输入格式} \\ \indent
+从文件 \filename{fourth.in} 中读入数据。 \par
+
+\para{输出格式} \\ \indent
+输出到文件 \filename{fourth.out} 中。 \par
+Output. 
+
+\sample{1}{输入}
+\begin{lstlisting}
+ Sample Input.
+\end{lstlisting}
+
+\sample{1}{输出}
+\begin{lstlisting}
+ Sample Output.
+\end{lstlisting}
+
+\sample{1}{解释} \\ \indent
+Note.
+
+\sample{2}{} \\ \indent
+见选手目录下的 \filename{fourth/fourth2.in} 与 \filename{fourth/fourth2.ans}。
+
+\para{数据范围} \\ \indent
+Constraint.
+\end{document}
